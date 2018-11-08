@@ -34,3 +34,45 @@ s2 = ' '#至少有一个，否则返回false
 print(s.isspace())
 print(s1.isspace())
 print(s2.isspace())
+#isalpha()检测字符串是否是字母组成 返回布尔值
+print(('isalpha()检测字符串是否是字母组成，返回布尔值').center(50, '-'))
+s = 'I 狗like dog'
+s1 = 'I狗likedog'
+print(s.isalpha())
+print(s1.isalpha())
+#isdigit()检测字符串是否有数字组成
+#isdecimal()
+#isnumeric()
+print(('isdigit()检测字符串是否有数字组成').center(30,'-'))
+s = '123'
+print(s.isdigit())
+print(('isdecimal').center(50,'-'))
+print(s.isdecimal)
+print(('isnumeric').center(50,'*'))
+print(s.isnumeric())
+
+print(("b'101100'isdigit()").center(50,"*"))
+s = b'101100'
+print(s.isdigit())
+
+s = 123.2
+# print(s.isdigit())
+# print(s.isdecimal())
+
+#strip()去掉左右两边指定字符，默认是去掉空格
+#lstrip()去掉左边指定字符，默认空格
+#rstrip()去掉右边指定字符，默认空格
+print(('strip()去掉左右两边指定字符，默认是去掉空格').center(50,'*'))
+s = '    abc   '
+print('---'+s.strip()+'---')
+print('---'+s+'---')
+#maketrans()生成用于字符串替换的映射表
+#translate()进行字符串替换
+
+print(('maketrance生成用于字符串替换的映射表').center(50,'-'))
+s = '今天晚上我吃的是小炒肉，可好吃了'
+table = s.maketrans('小炒肉', '大白菜')
+print(table)
+print(s.translate(table))
+print(s.replace('小炒肉', '大白菜'))
+print(s.translate(s.maketrans('小炒肉', '大白菜')))
