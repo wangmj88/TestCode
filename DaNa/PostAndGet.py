@@ -76,8 +76,8 @@ import json
 # fw.close()
 
 #把浏览器页面下载到本地   保存网页，可以理解为简单的爬虫工具
-url=‘http://www.nnzhp.cn/archives/630‘
+url='http://www.nnzhp.cn/archives/630'
 r = requests.get(url)
-f = open(‘nnzhp.html‘,‘wb‘)
+f = open('nnzhp.html','wb')
 f.write(r.content)
 f.close()
