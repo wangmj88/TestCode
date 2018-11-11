@@ -1,4 +1,6 @@
-关于REQUEST请求和SESSION请求的区别
+#关于REQUEST请求和SESSION请求的区别
+
+'''
 1.session访问(带header，带body)
 
 s=request.session()
@@ -20,6 +22,7 @@ r=request.post(url,headers=h,data=body)
 4.data,param的区别
 
 python之使用request模块发送post和get请求
+'''
 import requests
 import json
 
