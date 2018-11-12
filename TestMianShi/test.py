@@ -27,3 +27,4 @@ b = {a[key]:key for key in a}
 a = {b[key]:key for key in b}
 
 print(a)
+
