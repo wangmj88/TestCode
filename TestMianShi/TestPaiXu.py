@@ -20,6 +20,24 @@ def buble_sort(array):
 l = [1,3,5,7,9,2,4,6,8,0]
 print(buble_sort(l))#[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+#快速排序
+
+def quick_sort(array):
+    def recursive(begin,end):
+        if begin > end:
+            return
+        l,r = begin,end
+        pivot = array[l]
+        while l < r and array[r] > pivot:
+            r -= 1
+        while l < r and array[l] <= pivot:
+            l += 1
+        array[l],array[r] = array[r],array[l]
+        recursive(begin,l - 1)
+        recursive(r + 1,end)
+    recursive(0,len(array) - 1)
+    return array
+
 
 
 
