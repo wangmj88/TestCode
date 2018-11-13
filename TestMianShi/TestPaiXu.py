@@ -38,6 +38,42 @@ def quick_sort(array):
     recursive(0,len(array) - 1)
     return array
 
+'''
+https://blog.csdn.net/weixin_42206504/article/details/82693453
+    快速排序是原址排序，不用新增某一序列用于存储在排序过程中的临时变量。原址排序就是在原来的数组上进行操作。
+
+主要分为两步
+
+分解：对于一个数组A[p.....r]排序，
+     将其划分为两个子数组A[p.....q-1]和A[q+1.....r]，
+     使得A[p.....q-1]中的每一个元素都小于等于A[q]，
+     而A[q]也小于等于A[q+1.....r]中的每一个元素。
+     此时我们就能将A[q]在正确排序后的正确下标索引解出来。对应下面程序的partition函数。
+
+解决：通过递归调用快速排序，因为上一步已经把A[q]的正确位置找出，并且左边小于等于A[q]，右边严格大于A[q]，只要分别对左右两边再调用快速排序算法即可。
+--------------------- 
+作者：风卷残荷hust 
+来源：CSDN 
+原文：https://blog.csdn.net/weixin_42206504/article/details/82693453 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+关于partition函数：其主要作用将数组分成两部分，并找到A[r]的正确位置，并且将数组分为三个区域(1)若p<=k<=i,a[k]<=x.(2)若i+1<=k<=j-1,a[k]>x.(3)若k==r,a[k]=x.
+'''
+def partition(a,p,r):
+    x=a[r]
+    i=p-1
+    for j in range(p,r):
+        if a[j]<=x:
+            i+=1
+            a[i],a[j]=a[j],a[i]
+    a[i+1],a[r]=a[r],a[i+1]
+    return i+1
+def quicksort(a,p,r):
+    if p<r:
+        q=partition(a,p,r)
+        quicksort(a,p,q-1)
+        quicksort(a,q+1,r)
+
+
 
 
 
