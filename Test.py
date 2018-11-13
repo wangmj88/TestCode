@@ -1,24 +1,12 @@
+#字典解析
 from random import randint
-#找出正数
-l =[randint(-10,10) for x in range(10)]
-print(l)
-l1 =[x for x in l if x > 0]
-print(l1)#[1, 1, 5, 7]
+d = {'student %i' %i:randint(50,100) for i in range(1,10)}
+for k,v in d.items():
+    if v > 70:
+        print(k,v)
+
 print('+'*10)
-g = filter(lambda x:x > 0,l)
-while True:
-    try:
-        la = next(g)
-        print(la)
-    except  StopIteration:
-        print('到底了')
-        break
-'''
-1
-1
-5
-7
-到底了
-'''
+print({k:v for k,v in d.items() if v > 70})
 
-
+g = filter(lambda item:item[1] > 70,d.items())
+print(dict(g))
